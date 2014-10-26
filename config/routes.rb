@@ -1,4 +1,10 @@
 EncurtaAi::Application.routes.draw do
+
+  root to: 'home#index'
+
+  post 'create' => 'home#create'
+  get 'success/:id' => 'home#success'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

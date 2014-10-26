@@ -1,0 +1,17 @@
+<h1>Hello World</h1>
+
+<p>Insira o Link para encurtar a URL:</p>
+
+<%= form_for(@link,url: create_path) do |f| %>
+
+  <% if @link.errors.any? %>
+    <p>Há erros no formulário.</p>
+  <% end %>
+
+  <%= f.label :url  %>
+  <%= f.text_field :url  %>
+
+  <%= f.submit  %>
+
+<% end %>
+
