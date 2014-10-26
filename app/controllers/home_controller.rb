@@ -20,6 +20,15 @@ class HomeController < ApplicationController
     redirect_to :index if @link.nil?
   end
 
+  def redirect
+    @link = Link.find_by_key(params[:key])
+    if @link
+      redirect_to @link.url
+    else
+      redirect_to root_path
+    end
+  end
+
   private
     def create_params
       params.require(:link).permit(:url)
