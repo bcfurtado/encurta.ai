@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.input-center {
+  width: 340px;
+  text-align: center;
+  margin: 0 auto;
+}

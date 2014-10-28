@@ -1,17 +1,31 @@
-<h1>Hello World</h1>
+<div class="container-full">
 
-<p>Insira o Link para encurtar a URL:</p>
+      <div class="row">
+       
+        <div class="col-lg-12 text-center v-center">
+          
+          <h1>encurta.ai</h1>
+          <p class="lead">O melhor encurtador de URLs do mundo!</p>
+          
+          <br><br><br>
+          
+          <%= form_for(@link,url: create_path, html: {:class => 'col-lg-12'}) do |f| %>
+          
+            <% if @link.errors.any? %>
+              <p class="text-danger">Há erros no link.</p>
+            <% end %>
+  
+            <div class="input-group input-center">
+              <%= f.text_field(:url, placeholder: 'Insira seu link aqui', class: 'form-control input-lg')%>
+              <span class="input-group-btn">
+                <%= f.submit( value: 'Encurtar!', class: 'btn btn-lg btn-primary') %>
+              </span>
+            </div>
 
-<%= form_for(@link,url: create_path) do |f| %>
+          <% end %>
+        </div>
+        
+      </div> <!-- /row -->
 
-  <% if @link.errors.any? %>
-    <p>Há erros no formulário.</p>
-  <% end %>
-
-  <%= f.label :url  %>
-  <%= f.text_field :url  %>
-
-  <%= f.submit  %>
-
-<% end %>
+</div> <!-- /container full -->
 
